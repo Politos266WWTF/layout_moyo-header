@@ -1,22 +1,10 @@
 :root {
   --font-sans: 'Roboto', Arial, sans-serif;
-  --color-blue: #00ACDC; 
+  --blue: #00ACDC;
 }
 
-*{
-  box-sizing: border-box;
+body { 
   margin: 0;
-  padding: 0;
-}
-
-.logo img{
-width: 40px;
-height: 40px;
-object-fit: contain;
-}
-
-
-body {
   font-family: var(--font-sans);
   font-size: 12px;
   line-height: 100%;
@@ -28,66 +16,74 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
 }
-.header{
-width: 100%;
-color: #FFFFFF;
-display: flex;
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
-.container{
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
   padding: 30px;
   width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-}
-.nav-list{
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
-
 }
 
-.nav-list li{
-    margin-right:50px;
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav-list a{
+
+.nav-list li + li {
+  margin-left: 30px;
+}
+
+.nav-list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 80px;
-  color: #000000;
+  text-transform: uppercase;
   text-decoration: none;
-  position: relative;
-  transition: color 0.3s ease;
+  color: black;
+  position: relative; 
 }
-.nav-list a::after{
+
+.nav-list a::after {
   content: "";
   position: absolute;
-  left: 0%;
-  bottom: -7px;
+  bottom: 0;
+  left: 0;
   width: 0;
-  height: 3px;
-  background-color: var(--color-blue);
+  height: 2px;
+  background-color: var(--blue);
   transition: width 0.3s;
-  
-}
-.nav-list a:hover{
-  color: var(--color-blue);
-}
-.nav-list a:hover::after{
-  width: 100%;
-
-}
-.nav-list li a.is-active {
-   color: var(--color-blue);
 }
 
-.nav-list a.is-active::after{
+.nav-list a:hover::after {
   width: 100%;
 }
 
-.nav-list li :last-child{
-  margin-right: 0px;
+.nav-list a[data-qa="hover"]:hover {
+  color: var(--blue);
+}
 
+.nav-list a.is-active {
+  color: var(--blue);
+}
+
+.nav-list a.is-active::after {
+  width: 100%;
 }
