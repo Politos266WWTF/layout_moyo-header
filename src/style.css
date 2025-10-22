@@ -70,14 +70,6 @@ body {
   transition: width 0.3s;
 }
 
-.nav-list a:hover::after {
-  width: 100%;
-}
-
-.nav-list a[data-qa="hover"]:hover {
-  color: var(--blue);
-}
-
 .nav-list a:hover {
   color: var(--blue);
 }
