@@ -25,7 +25,8 @@ body {
 }
 
 .container {
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
   width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -54,7 +55,6 @@ body {
   color: black;
   position: relative;
   padding: 0;
-  font-family: Roboto, Arial, sans-serif;
   font-weight: 500;
 }
 
@@ -79,12 +79,6 @@ body {
 }
 
 .nav-list a.is-active::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  height: 2px;
-  background-color: var(--blue);
 }
 
