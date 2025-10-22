@@ -7,12 +7,7 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: 12px;
-  line-height: 100%;
-  letter-spacing: 0;
   font-weight: 500;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: white;
 }
 
@@ -80,6 +75,10 @@ body {
 }
 
 .nav-list a[data-qa="hover"]:hover {
+  color: var(--blue);
+}
+
+.nav-list a:hover {
   color: var(--blue);
 }
 
