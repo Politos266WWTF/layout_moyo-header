@@ -17,6 +17,10 @@ body {
   object-fit: contain;
 }
 
+.logo {
+  margin-left: 50px;
+}
+
 .header {
   width: 100%;
   display: flex;
@@ -44,6 +48,8 @@ body {
 }
 
 .nav-list a {
+  font-size: 12px;
+  line-height: 15px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +68,7 @@ body {
   bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
+  height: 4px;
   background-color: var(--blue);
   transition: width 0.3s;
 }
@@ -76,6 +82,14 @@ body {
 }
 
 .nav-list a.is-active::after {
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  border-radius: 8px;
+  position: absolute;
+}
+
+.nav-list a:hover::after {
   width: 100%;
 }
 
