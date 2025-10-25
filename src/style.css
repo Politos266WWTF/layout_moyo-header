@@ -1,6 +1,6 @@
 :root {
   --font-sans: 'Roboto', Arial, sans-serif;
-  --blue: #00ACDC;
+  --blue: #00acdc;
 }
 
 body {
@@ -12,24 +12,31 @@ body {
   background-color: white;
 }
 
-.logo img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
 .header {
   width: 100%;
+  padding-left: 50px;
   display: flex;
+  justify-content: center; /* контейнер по центру страницы */
   align-items: center;
 }
 
 .container {
-  width: 1200px;
-  margin: 0 auto;
+  width: auto;
+  height: 60px;
   display: flex;
+  margin: 0 auto;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* логотип слева, ссылки рядом */
+  gap: 30px;
+  position: relative;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-left: 50px; /* расстояние от края контейнера */
+  margin-right: 30px; /* расстояние до ссылок */
 }
 
 .nav-list {
@@ -37,55 +44,46 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: flex-start;
 }
 
 .nav-list li + li {
-  margin-left: 30px;
+  margin-left: 15px; /* расстояние между ссылками */
 }
 
 .nav-list a {
   font-size: 12px;
   line-height: 15px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
+  height: 15px; /* совпадает с высотой логотипа */
   text-transform: uppercase;
   text-decoration: none;
   color: black;
   position: relative;
-  padding: 0;
+  max-width: 100px;
+  min-width: 30px;
 }
 
-
 .nav-list a::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
   height: 4px;
   background-color: var(--blue);
+  border-radius: 8px;
   transition: width 0.3s;
 }
 
-.nav-list a:hover {
-  color: var(--blue);
-}
-
+.nav-list a:hover,
 .nav-list a.is-active {
   color: var(--blue);
 }
 
+.nav-list a:hover::after,
 .nav-list a.is-active::after {
   width: 100%;
-  height: 4px;
-  bottom: 0;
-  border-radius: 8px;
-  position: absolute;
 }
-
-.nav-list a:hover::after {
-  width: 100%;
-}
-
