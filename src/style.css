@@ -3,40 +3,41 @@
   --blue: #00acdc;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
+  font-weight: 500; /* Roboto Medium */
   font-size: 12px;
-  font-weight: 500;
-  line-height: 15px;
+  line-height: 10px;
   background-color: white;
 }
 
 .header {
   width: 100%;
-  padding-left: 50px;
   display: flex;
-  justify-content: center; /* контейнер по центру страницы */
-  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  width: auto;
-  height: 60px;
+  width: 1200px; /* рабочее пространство */
   display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: flex-start; /* логотип слева, ссылки рядом */
-  gap: 30px;
-  position: relative;
+  align-items: center; /* вертикальное выравнивание лого и ссылок */
+  justify-content: flex-start; /* ссылки идут после логотипа */
+}
+
+.logo {
+  margin-right: 30px; /* расстояние от логотипа до первой ссылки */
 }
 
 .logo img {
   width: 40px;
   height: 40px;
   object-fit: contain;
-  margin-left: 50px; /* расстояние от края контейнера */
-  margin-right: 30px; /* расстояние до ссылок */
+  display: block;
 }
 
 .nav-list {
@@ -44,7 +45,6 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: flex-start;
 }
 
 .nav-list li + li {
@@ -53,17 +53,13 @@ body {
 
 .nav-list a {
   font-size: 12px;
-  line-height: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 15px; /* совпадает с высотой логотипа */
-  text-transform: uppercase;
+  line-height: 40px; /* центрируем текст по логотипу высотой 40px */
+  display: inline-block;
+  text-transform: uppercase; /* только CSS, не писать большие буквы в HTML */
   text-decoration: none;
   color: black;
   position: relative;
-  max-width: 100px;
-  min-width: 30px;
+  padding: 0; /* убираем лишние отступы */
 }
 
 .nav-list a::after {
@@ -78,12 +74,15 @@ body {
   transition: width 0.3s;
 }
 
+.nav-list a:hover::after {
+  width: 100%; /* подчеркивание при ховере */
+}
+
+.nav-list a.is-active::after {
+  width: 100%; /* подчеркивание только у активного */
+}
+
 .nav-list a:hover,
 .nav-list a.is-active {
   color: var(--blue);
-}
-
-.nav-list a:hover::after,
-.nav-list a.is-active::after {
-  width: 100%;
 }
