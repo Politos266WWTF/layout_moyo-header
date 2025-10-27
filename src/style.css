@@ -5,32 +5,42 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   font-family: var(--font-sans);
   font-weight: 500; /* Roboto Medium */
   font-size: 12px;
-  line-height: 10px;
+  line-height: 100%;
   background-color: white;
 }
 
 .header {
-  width: 100%;
+  width: 1200px;
+  height: 60px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  background-color: white;
 }
 
 .container {
-  width: 1200px; /* рабочее пространство */
+  width: 100%; /* рабочее пространство */
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   align-items: center; /* вертикальное выравнивание лого и ссылок */
   justify-content: flex-start; /* ссылки идут после логотипа */
+  padding: 0 20px;
 }
 
 .logo {
-  margin-right: 30px; /* расстояние от логотипа до первой ссылки */
+  margin-right: 419px;
+  width: 40px;
+  height: 40px;
 }
 
 .logo img {
@@ -43,31 +53,32 @@ body {
 .nav-list {
   display: flex;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 .nav-list li + li {
-  margin-left: 15px; /* расстояние между ссылками */
+  margin-left: 20px;
 }
 
 .nav-list a {
   font-size: 12px;
-  line-height: 40px; /* центрируем текст по логотипу высотой 40px */
-  display: inline-block;
-  text-transform: uppercase; /* только CSS, не писать большие буквы в HTML */
+  height: 60px; /* ровно как у хедера */
+  display: flex;
+  align-items: center; /* центрирует текст по вертикали */
+  text-transform: uppercase;
   text-decoration: none;
   color: black;
   position: relative;
-  padding: 0; /* убираем лишние отступы */
+  padding: 0; /* больше ничего не добавляем */
 }
 
 .nav-list a::after {
   content: '';
   position: absolute;
-  bottom: 0;
   left: 0;
   width: 0;
+  bottom: 0;
   height: 4px;
   background-color: var(--blue);
   border-radius: 8px;
@@ -85,4 +96,19 @@ body {
 .nav-list a:hover,
 .nav-list a.is-active {
   color: var(--blue);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    margin-right: 243px; /* новый отступ от логотипа до Apple */
+  }
+
+  .nav-list li + li {
+    margin-left: 20px;
+  }
 }
