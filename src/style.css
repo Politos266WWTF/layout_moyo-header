@@ -5,7 +5,6 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
 
@@ -34,7 +33,7 @@ body {
   display: flex;
   align-items: center; /* вертикальное выравнивание лого и ссылок */
   justify-content: flex-start; /* ссылки идут после логотипа */
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .logo {
@@ -54,7 +53,11 @@ body {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2px;
+}
+
+.nav-list li {
+  margin-left: 3px;
 }
 
 .nav-list li + li {
@@ -63,8 +66,12 @@ body {
 
 .nav-list a {
   font-size: 12px;
+  font-weight: 500;
+  line-height: 100%;
   height: 60px; /* ровно как у хедера */
   display: flex;
+  letter-spacing: 0.02px;
+  white-space: nowrap;
   align-items: center; /* центрирует текст по вертикали */
   text-transform: uppercase;
   text-decoration: none;
